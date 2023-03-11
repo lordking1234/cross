@@ -1,124 +1,31 @@
-
-let children_data = [
-  {"number_jobs":1,"number_company":1,"number_states":1,"Founded":1744},
-{"number_jobs":7,"number_company":1,"number_states":2,"Founded":1781},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1812},
-{"number_jobs":2,"number_company":1,"number_states":1,"Founded":1830},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1846},
-{"number_jobs":4,"number_company":1,"number_states":3,"Founded":1849},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1850},
-{"number_jobs":8,"number_company":1,"number_states":1,"Founded":1851},
-{"number_jobs":3,"number_company":1,"number_states":1,"Founded":1852},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1856},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1860},
-{"number_jobs":2,"number_company":1,"number_states":1,"Founded":1863},
-{"number_jobs":3,"number_company":2,"number_states":4,"Founded":1870},
-{"number_jobs":6,"number_company":1,"number_states":2,"Founded":1875},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1878},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1883},
-{"number_jobs":2,"number_company":2,"number_states":2,"Founded":1885},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1887},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1889},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1899},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1902},
-{"number_jobs":5,"number_company":1,"number_states":3,"Founded":1912},
-{"number_jobs":5,"number_company":1,"number_states":2,"Founded":1913},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1914},
-{"number_jobs":2,"number_company":1,"number_states":1,"Founded":1915},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1917},
-{"number_jobs":2,"number_company":1,"number_states":2,"Founded":1922},
-{"number_jobs":3,"number_company":3,"number_states":2,"Founded":1925},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1927},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1928},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1929},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1930},
-{"number_jobs":5,"number_company":4,"number_states":4,"Founded":1935},
-{"number_jobs":2,"number_company":2,"number_states":2,"Founded":1937},
-{"number_jobs":6,"number_company":3,"number_states":4,"Founded":1939},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1942},
-{"number_jobs":2,"number_company":1,"number_states":2,"Founded":1943},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1945},
-{"number_jobs":2,"number_company":1,"number_states":1,"Founded":1947},
-{"number_jobs":4,"number_company":4,"number_states":4,"Founded":1948},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1951},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1952},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1954},
-{"number_jobs":9,"number_company":5,"number_states":6,"Founded":1958},
-{"number_jobs":4,"number_company":2,"number_states":2,"Founded":1961},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1962},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1964},
-{"number_jobs":7,"number_company":2,"number_states":1,"Founded":1965},
-{"number_jobs":2,"number_company":3,"number_states":3,"Founded":1966},
-{"number_jobs":3,"number_company":3,"number_states":3,"Founded":1967},
-{"number_jobs":5,"number_company":2,"number_states":3,"Founded":1968},
-{"number_jobs":3,"number_company":3,"number_states":3,"Founded":1969},
-{"number_jobs":2,"number_company":1,"number_states":1,"Founded":1970},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1971},
-{"number_jobs":2,"number_company":2,"number_states":1,"Founded":1972},
-{"number_jobs":3,"number_company":3,"number_states":3,"Founded":1973},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1974},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1975},
-{"number_jobs":4,"number_company":3,"number_states":3,"Founded":1976},
-{"number_jobs":4,"number_company":4,"number_states":4,"Founded":1977},
-{"number_jobs":2,"number_company":2,"number_states":2,"Founded":1978},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1979},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1980},
-{"number_jobs":5,"number_company":5,"number_states":5,"Founded":1981},
-{"number_jobs":4,"number_company":4,"number_states":3,"Founded":1982},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1983},
-{"number_jobs":9,"number_company":5,"number_states":5,"Founded":1984},
-{"number_jobs":1,"number_company":1,"number_states":1,"Founded":1985},
-{"number_jobs":3,"number_company":3,"number_states":3,"Founded":1986},
-{"number_jobs":2,"number_company":2,"number_states":2,"Founded":1987},
-{"number_jobs":4,"number_company":4,"number_states":3,"Founded":1988},
-{"number_jobs":4,"number_company":3,"number_states":3,"Founded":1989},
-{"number_jobs":2,"number_company":2,"number_states":2,"Founded":1990},
-{"number_jobs":3,"number_company":2,"number_states":2,"Founded":1991},
-{"number_jobs":4,"number_company":6,"number_states":4,"Founded":1992},
-{"number_jobs":3,"number_company":3,"number_states":3,"Founded":1993},
-{"number_jobs":4,"number_company":3,"number_states":3,"Founded":1994},
-{"number_jobs":5,"number_company":6,"number_states":4,"Founded":1995},
-{"number_jobs":16,"number_company":10,"number_states":9,"Founded":1996},
-{"number_jobs":6,"number_company":10,"number_states":6,"Founded":1997},
-{"number_jobs":2,"number_company":1,"number_states":2,"Founded":1998},
-{"number_jobs":8,"number_company":9,"number_states":8,"Founded":1999},
-{"number_jobs":6,"number_company":8,"number_states":8,"Founded":2000},
-{"number_jobs":3,"number_company":3,"number_states":3,"Founded":2001},
-{"number_jobs":9,"number_company":8,"number_states":8,"Founded":2002},
-{"number_jobs":5,"number_company":6,"number_states":6,"Founded":2003},
-{"number_jobs":4,"number_company":4,"number_states":4,"Founded":2004},
-{"number_jobs":4,"number_company":5,"number_states":4,"Founded":2005},
-{"number_jobs":12,"number_company":13,"number_states":7,"Founded":2006},
-{"number_jobs":10,"number_company":9,"number_states":5,"Founded":2007},
-{"number_jobs":14,"number_company":16,"number_states":9,"Founded":2008},
-{"number_jobs":3,"number_company":2,"number_states":2,"Founded":2009},
-{"number_jobs":11,"number_company":13,"number_states":7,"Founded":2010},
-{"number_jobs":11,"number_company":12,"number_states":6,"Founded":2011},
-{"number_jobs":9,"number_company":10,"number_states":6,"Founded":2012},
-{"number_jobs":7,"number_company":6,"number_states":4,"Founded":2013},
-{"number_jobs":8,"number_company":6,"number_states":5,"Founded":2014},
-{"number_jobs":9,"number_company":7,"number_states":9,"Founded":2015},
-{"number_jobs":1,"number_company":4,"number_states":3,"Founded":2016},
-{"number_jobs":8,"number_company":7,"number_states":6,"Founded":2017},
-{"number_jobs":2,"number_company":2,"number_states":2,"Founded":2019}
-]
-
-
+let children_data = 
+[{"decade":"18th","com_num":2,"com_loc":3,"com_job":7,"com_jobs":15,"cum_num":2,"cum_loc":3,"cum_job":7,"cum_jobs":15},{"decade":"19th","com_num":20,"com_loc":16,"com_job":30,"com_jobs":68,"cum_num":22,"cum_loc":19,"cum_job":37,"cum_jobs":83},{"decade":"20th","com_num":164,"com_loc":37,"com_job":145,"com_jobs":348,"cum_num":186,"cum_loc":56,"cum_job":182,"cum_jobs":431},{"decade":"21th","com_num":130,"com_loc":23,"com_job":85,"com_jobs":258,"cum_num":316,"cum_loc":79,"cum_job":267,"cum_jobs":689}]
 const newData = children_data.reduce((t,i)=>{
   return {...t,
-    date:[...t.date,i.Founded],
-    xx:[...t.xx,i.number_company]
+    date:[...t.date,i.decade],
+    com_nums:[...t.com_nums,i.com_num] ,
+    com_locs:[...t.com_locs,i.com_loc] ,
+    com_jobs:[...t.com_jobs,i.com_job] ,
+    cum_nums:[...t.cum_nums,i.cum_num] ,
+    cum_locs:[...t.cum_locs,i.cum_loc] ,
+    cum_jobs:[...t.cum_jobs,i.cum_job] ,
+    com_jobss:[...t.com_jobss,i.com_jobs] ,
+    cum_jobss:[...t.cum_jobss,i.cum_jobs] 
+
   }
 
-},{date:[],xx:[]});
-
+},{date:[],com_nums:[],com_locs:[],com_jobs:[],cum_nums:[],cum_locs:[],cum_jobs:[],com_jobss:[],cum_jobss:[]});
 
   
-var chart000 = {
+        var chart000 = {
           series: [{
           name: '',
           type: 'area',
-          data: newData.xx
+          data: newData.com_nums
+        },{
+          name: '',
+          type: 'area',
+          data: newData.cum_nums
         }],
           chart: {
           height: 350,
@@ -151,11 +58,11 @@ var chart000 = {
           size: 0
         },
         xaxis: {
-          type: 'year'
+          type: 'Century'
         },
         yaxis: {
           title: {
-            text: 'Lifetime Gross',
+            text: 'Number of Companies',
           },
           min: 0
         },
@@ -189,7 +96,7 @@ var chart000 = {
           y: {
             formatter: function (y) {
               if (typeof y !== "undefined") {
-                return y.toFixed(0) + " $";
+                return y.toFixed(0) + " Company";
               }
               return y;
         
@@ -200,78 +107,291 @@ var chart000 = {
 
         var chart = new ApexCharts(document.getElementById("chart000"), chart000);
         chart.render();
+  
 //------------------------------------------------------------------------------
 
-        var studio = ["WB", "Uni.", "Fox", "Par.", "BV", "IFC", "Sony", "SPC", "Mira.", "MGM"];
-        var count = [817, 712, 628, 603, 580, 462, 421, 405, 393, 381];
 
-        var chart0 = {
-          series: [{
-            data: count
-          }],
-            chart: {
-            type: 'bar',
-            height: 350
-          },
-          annotations: {
-            xaxis: [{
-              x: 500,
-              borderColor: '#00E396',
-              label: {
-                borderColor: '#00E396',
-                style: {
-                  color: '#fff',
-                  background: '#00E396',
-                },
-                text: 'Under 500',
-              }
-            }],
-            yaxis: [{
-              y: '',
-              y2: '',
-              label: {
-                text: ''
-              }
-            }]
-          },
-          plotOptions: {
-            bar: {
-              horizontal: true,
-            }
-          },
-          dataLabels: {
-            enabled: true
-          },
-          xaxis: {
-            categories:studio,
-          },
-          grid: {
-            xaxis: {
-              lines: {
-                show: true
-              }
-            }
-          },
-          yaxis: {
-            reversed: true,
-            axisTicks: {
-              show: true
-            }
-          }
-          };
 
-        var chart = new ApexCharts(document.getElementById("chart0"), chart0);
-        chart.render();
+var chart1112 = {
+  series: [{
+  name: '',
+  type: 'area',
+  data: newData.com_jobss
+},{
+  name: '',
+  type: 'area',
+  data:  newData.cum_jobss
+}],
+  chart: {
+  height: 350,
+  type: 'line',
+  stacked: false,
+},
+stroke: {
+  width: [0, 2, 5],
+  curve: 'smooth'
+},
+plotOptions: {
+  bar: {
+    columnWidth: '50%'
+  }
+},
+
+fill: {
+  opacity: [0.85, 0.25, 1],
+  gradient: {
+    inverseColors: false,
+    shade: 'light',
+    type: "vertical",
+    opacityFrom: 0.85,
+    opacityTo: 0.55,
+    stops: [0, 100, 100, 100]
+  }
+},
+labels:  newData.date,
+markers: {
+  size: 0
+},
+xaxis: {
+  type: 'year'
+},
+yaxis: {
+  title: {
+    text: 'Number of jobs',
+  },
+  min: 0
+},
+annotations: {
+  xaxis: [{
+    x: 1977 ,
+    borderColor: '#999',
+    yAxisIndex: 0,
+    label: {
+      show: true,
+      text: 'First Jump',
+      style: {
+        color: "#fff",
+        background: '#775DD0'
+      }
+    }
+  },{
+    x: 2001 ,
+    borderColor: '#999',
+    yAxisIndex: 0,
+    label: {
+      show: true,
+      text: 'Second Jump',
+      style: {
+        color: "#fff",
+        background: '#708DD0'
+      }
+    }
+  },{
+    x: 2010 ,
+    borderColor: '#999',
+    yAxisIndex: 0,
+    label: {
+      show: true,
+      text: 'Third Jump',
+      style: {
+        color: "#fff",
+        background: '#757DD0'
+      }
+    }
+  }]
+},
+fill: {
+  type: 'gradient',
+  gradient: {
+    shadeIntensity: 1,
+    opacityFrom: 0.7,
+    opacityTo: 0.9,
+    stops: [0, 100]
+  }
+},
+tooltip: {
+  shared: true,
+  intersect: false,
+  y: {
+    formatter: function (y) {
+      if (typeof y !== "undefined") {
+        return y.toFixed(0) + " jobs";
+      }
+      return y;
+
+    }
+  }
+}
+};
+
+var chart = new ApexCharts(document.getElementById("chart1112"), chart1112);
+chart.render();
+
 
 
 //------------------------------------------------------------------------------------------
         
-const studio1 = ["BV", "WB", "Uni", "Fox", "Par", "Sony", "NL", "MGM", "LGF", "Col"];
-const count1 = [44.38, 39.22, 35.44, 33.45, 28.61, 22, 7.3, 6.7, 5.77, 5.69];
+
+let childrens = 
+
+[{"jj":"CA","maxs":155},{"jj":"IL","maxs":145},{"jj":"MA","maxs":136},{"jj":"NJ","maxs":132},{"jj":"DC","maxs":132},{"jj":"NC","maxs":128},{"jj":"KY","maxs":128},{"jj":"RI","maxs":126},{"jj":"MD","maxs":126},{"jj":"NY","maxs":125}]
+const new2= childrens.reduce((t,i)=>{
+  return {...t,
+    jjs:[...t.jjs,i.jj],
+    maxss:[...t.maxss,i.maxs] 
+  }
+
+},{maxss:[],jjs:[]});
+
+
+var chart88 = {
+  series: [{
+    data: new2.maxss
+  }],
+    chart: {
+    type: 'area',
+    height: 350
+  },
+  annotations: {
+    xaxis: [{
+      x: 10,
+      borderColor: '#00E396',
+      label: {
+        borderColor: '#00E396',
+        style: {
+          color: '#fff',
+          background: '#00E396',
+        },
+        text: 'Under 10',
+      }
+    }],
+    yaxis: [{
+      y: '',
+      y2: '',
+      label: {
+        text: ''
+      }
+    }]
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true
+    }
+  },
+  dataLabels: {
+    enabled: true
+  },
+  xaxis: {
+    categories:new2.jjs ,
+  },
+  grid: {
+    xaxis: {
+      lines: {
+        show: true
+      }
+    }
+  },
+  yaxis: {
+    reversed: false,
+    axisTicks: {
+      show: true
+    }
+  }
+  };
+
+var chart = new ApexCharts(document.getElementById("chart88"), chart88);
+chart.render();
+
+
+
+
+
+let childrenss = 
+
+[{"jj":"NE","mins":39},{"jj":"SC","mins":39},{"jj":"ID","mins":40},{"jj":"LA","mins":40},{"jj":"AL","mins":41},{"jj":"DE","mins":42},{"jj":"WI","mins":54},{"jj":"NM","mins":55},{"jj":"GA","mins":56},{"jj":"IA","mins":56}]
+const new3= childrenss.reduce((t,i)=>{
+  return {...t,
+    jjss:[...t.jjss,i.jj],
+    minss:[...t.minss,i.mins] 
+  }
+
+},{minss:[],jjss:[]});
+
+
+var chart99 = {
+  series: [{
+    data: new3.minss
+  }],
+    chart: {
+    type: 'area',
+    height: 350
+  },
+  annotations: {
+    xaxis: [{
+      x: 10,
+      borderColor: '#00E396',
+      label: {
+        borderColor: '#00E396',
+        style: {
+          color: '#fff',
+          background: '#00E396',
+        },
+        text: 'Under 10',
+      }
+    }],
+    yaxis: [{
+      y: '',
+      y2: '',
+      label: {
+        text: ''
+      }
+    }]
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true
+    }
+  },
+  dataLabels: {
+    enabled: true
+  },
+  xaxis: {
+    categories:new3.jjss ,
+  },
+  grid: {
+    xaxis: {
+      lines: {
+        show: true
+      }
+    }
+  },
+  yaxis: {
+    reversed: false,
+    axisTicks: {
+      show: true
+    }
+  }
+  };
+
+var chart = new ApexCharts(document.getElementById("chart99"), chart99);
+chart.render();
+
+
+
+
+let children = 
+[{"job_state":"CA","com_numm":81},{"job_state":"NY","com_numm":40},{"job_state":"MA","com_numm":33},{"job_state":"VA","com_numm":19},{"job_state":"IL","com_numm":18},{"job_state":"MD","com_numm":17},{"job_state":"TX","com_numm":16},{"job_state":"NJ","com_numm":12},{"job_state":"PA","com_numm":11},{"job_state":"WA","com_numm":9}]
+const new1= children.reduce((t,i)=>{
+  return {...t,
+    job_states:[...t.job_states,i.job_state],
+    com_numms:[...t.com_numms,i.com_numm] 
+  }
+
+},{job_states:[],com_numms:[]});
 
 var chart00 = {
   series: [{
-    data: count1
+    data: new1.com_numms
   }],
     chart: {
     type: 'bar',
@@ -307,7 +427,7 @@ var chart00 = {
     enabled: true
   },
   xaxis: {
-    categories:studio1,
+    categories:new1.job_states ,
   },
   grid: {
     xaxis: {
@@ -317,7 +437,7 @@ var chart00 = {
     }
   },
   yaxis: {
-    reversed: true,
+    reversed: false,
     axisTicks: {
       show: true
     }
@@ -332,17 +452,17 @@ chart.render();
 //----------------------------------------------------------------------------------
 
 
-yearArray = [1921, 1926, 1927, 1931, 1936, 1937, 1939, 1940, 1941, 1942, 1945, 1946, 1947, 1949, 1950, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019];
-
-studioArray = [1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 1, 2, 1, 2, 3, 2, 3, 3, 2, 5, 2, 3, 2, 4, 2, 3, 5, 4, 3, 1, 5, 7, 7, 7, 6, 5, 9, 8, 9, 7, 8, 10, 12, 14, 12, 16, 22, 22, 30, 32, 37, 39, 50, 37, 42, 39, 44, 42, 45, 53, 53, 58, 62, 76, 90, 109, 130, 141, 125, 144, 145, 139, 109, 136, 136, 142, 158, 153, 151, 157, 141, 150, 115];
-
 
   
         var chart11 = {
           series: [{
           name: '',
           type: 'area',
-          data: studioArray
+          data: newData.com_locs
+        },{
+          name: '',
+          type: 'area',
+          data: newData.cum_locs
         }],
           chart: {
           height: 350,
@@ -370,16 +490,16 @@ studioArray = [1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 1, 2, 1, 2, 3, 2, 3, 3, 2, 5, 2, 3,
             stops: [0, 100, 100, 100]
           }
         },
-        labels: yearArray,
+        labels: newData.date,
         markers: {
           size: 0
         },
         xaxis: {
-          type: 'year'
+          type: 'Century'
         },
         yaxis: {
           title: {
-            text: 'Number of Studio',
+            text: 'Number of States',
           },
           min: 0
         },
@@ -425,7 +545,7 @@ studioArray = [1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 1, 2, 1, 2, 3, 2, 3, 3, 2, 5, 2, 3,
           y: {
             formatter: function (y) {
               if (typeof y !== "undefined") {
-                return y.toFixed(0) + " Studio";
+                return y.toFixed(0) + " state";
               }
               return y;
         
@@ -439,15 +559,15 @@ studioArray = [1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 1, 2, 1, 2, 3, 2, 3, 3, 2, 5, 2, 3,
   //-----------------------------------------------------------------------------
 
 
-  Yearr= [1921, 1926, 1927, 1931, 1936, 1937, 1939, 1940, 1941, 1942, 1945, 1946, 1947, 1949, 1950, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]
-
-  IndexArray= [1, 1, 1, 1, 1, 1, 3, 2, 3, 2, 1, 2, 1, 2, 3, 2, 3, 5, 2, 5, 2, 3, 2, 4, 2, 3, 5, 7, 3, 1, 8, 8, 9, 12, 11, 7, 14, 19, 23, 24, 35, 56, 82, 111, 110, 127, 154, 164, 174, 206, 233, 251, 234, 222, 242, 231, 257, 257, 278, 307, 294, 327, 381, 361, 350, 463, 492, 541, 537, 604, 622, 603, 515, 528, 594, 653, 676, 698, 702, 716, 718, 810, 417]
-
   var chart111 = {
     series: [{
     name: '',
     type: 'area',
-    data: IndexArray
+    data: newData.com_jobs
+  },{
+    name: '',
+    type: 'area',
+    data:  newData.cum_jobs
   }],
     chart: {
     height: 350,
@@ -475,7 +595,7 @@ studioArray = [1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 1, 2, 1, 2, 3, 2, 3, 3, 2, 5, 2, 3,
       stops: [0, 100, 100, 100]
     }
   },
-  labels: Yearr,
+  labels:  newData.date,
   markers: {
     size: 0
   },
@@ -484,7 +604,7 @@ studioArray = [1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 1, 2, 1, 2, 3, 2, 3, 3, 2, 5, 2, 3,
   },
   yaxis: {
     title: {
-      text: 'Number of Movie',
+      text: 'Number of jobs',
     },
     min: 0
   },
@@ -542,7 +662,7 @@ studioArray = [1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 1, 2, 1, 2, 3, 2, 3, 3, 2, 5, 2, 3,
     y: {
       formatter: function (y) {
         if (typeof y !== "undefined") {
-          return y.toFixed(0) + " Movie";
+          return y.toFixed(0) + " jobs";
         }
         return y;
   
@@ -562,7 +682,7 @@ studioArray = [1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 1, 2, 1, 2, 3, 2, 3, 3, 2, 5, 2, 3,
 
 
 
-chart22 = {
+var chart22 = {
   title: {
     text: '',
     subtext: '',
@@ -666,6 +786,10 @@ chart222 = {
 };
 
 echarts.init(document.getElementById('chart222')).setOption(chart222);
+
+
+
+
 
 
 
