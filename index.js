@@ -681,7 +681,6 @@ chart.render();
 //-------------------------------------------------------------------------
 
 
-
 var chart22 = {
   title: {
     text: '',
@@ -692,7 +691,7 @@ var chart22 = {
     trigger: 'item'
   },
   legend: {
-    orient: 'horizontal',
+    orient: 'vertical',
     left: 'left'
   },
   series: [
@@ -711,12 +710,16 @@ var chart22 = {
       radius: ['50%','10'],
       data: [
 
-        { value: 929, name: '0-10' },
-        { value: 120, name: '10-50' },
-        { value: 31, name: '50-100' },
-        { value: 16, name: '100-200' },
-        { value: 11, name: '200-500' },
-        { value: 5, name: 'more than 500' }
+        { value: 141, name: 'Subsidiary or Business Segment' },
+        { value: 141, name: 'College / University' },
+        { value: 140, name: 'Company - Public' },
+        { value: 129, name: 'Company - Private' },
+        { value: 107, name: 'Government' },
+        { value: 99, name: 'School / School District' },
+        { value: 99, name: 'Other Organization' },
+        { value: 93, name: 'Nonprofit Organization' },
+        { value: 86, name: 'Hospital' },
+        { value: 50, name: 'Unknown' }
       ],
       emphasis: {
         itemStyle: {
@@ -746,7 +749,7 @@ chart222 = {
     trigger: 'item'
   },
   legend: {
-    orient: 'horizontal',
+    orient: 'vertical',
     left: 'left'
   },
   series: [
@@ -765,13 +768,16 @@ chart222 = {
       radius: ['50%','10'],
       data: [
 
-        { value: 141, name: '0-10k' },
-        { value: 311, name: '10k-100k' },
-        { value: 281, name: '100k-1m' },
-        { value: 206, name: '1m-10m' },
-        { value: 101, name: '10m-100m' },
-        { value: 45, name: '100m-1b' },
-        { value: 2, name: 'more than 1b' }
+        { value: 201, name: 'Other Retail Stores' },
+        { value: 190, name: 'Motion Picture Production & Distribution' },
+        { value: 179, name: 'Financial Analytics & Research' },
+        { value: 171, name: 'Health, Beauty, & Fitness' },
+        { value: 167, name: 'Brokerage Services' },
+        { value: 162, name: 'Telecommunications Services' },
+        { value: 161, name: 'Auctions & Galleries' },
+        { value: 151, name: 'Internet' },
+        { value: 149, name: 'TV Broadcast & Cable Networks' },
+        { value: 147, name: 'Investment Banking & Asset Management' }
 
       ],
       emphasis: {
