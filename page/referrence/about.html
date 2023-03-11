@@ -76,30 +76,161 @@
                 <table style="border-collapse:collapse;font-size:0.9em;font-family:sans-serif">
                 <thead style="font-size: medium;">
                     <tr style="box-shadow:0 0 20px rgba(0, 0, 0, 0.15)">
-                      <th><code>dashboard</code></th>
+                      <th><code></code></th>
                       <th><code>Websites</code></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                      <td><a href="https://geniidata.com/user/lordking/data"target="_blanck">dashboard </a></td>
-                      <td><a href="https://en.wikipedia.org/wiki/Box_office"target="_blanck">wikipedia</a></td>
+                      <td><a href=""target="_blanck"> </a></td>
+                      <td><a href="https://en.wikipedia.org/wiki"target="_blanck">wikipedia</a></td>
                     </tr>
                     <tr>
                       <td><a href=""target="_blanck"></a></td>
-                      <td><a href="https://www.kaggle.com/datasets/thedevastator/hollywood-movies-domestic-lifetime-gross-and-ran?resource=download"target="_blanck">kaggle</a></td>
+                      <td><a href="https://www.kaggle.com/datasets/thedevastator/jobs-dataset-from-glassdoor"target="_blanck">kaggle</a></td>
                     </tr>
-                    <tr> 
-                      <td><a href=""target="_blanck"></a></td>
-                      <td><a href="https://discord.com/channels/902943676685230100/903338987022876702/1080452394212675624"target="_blanck">discord</a></td>
-                    </tr>  
          
                 </tbody>
                 </table>
 
 
- 
- 
+                <p  class="mt-5" style="font-family:serif"><code>query : </code>select 
+                  round(avg(max_salary)) as value ,
+                  industry as name
+                  from eda_data
+                  where type_of_ownership is not -1
+                  group by 2 
+                  order by 1 desc limit 10</p>
+                <p class="mt-5" style="font-family:serif"><code>query : </code>select 
+                  round(avg(max_salary)) as value ,
+                  type_of_ownership as name
+                  from eda_data
+                  where type_of_ownership is not -1
+                  group by 2 
+                  order by 1 desc limit 10</p>
+                <p class="mt-5" style="font-family:serif"><code>query : </code>with a as (
+                  select 
+                   avg(max_salary) ,
+                   job_title ,
+                   company_name 
+                   from eda_data 
+                   group by 2 
+                   order by 1 desc limit 10 ) 
+                   
+                 
+                 select 
+                 job_title ,
+                 company_name ,
+                 location ,
+                 size ,
+                 founded ,
+                 type_of_ownership ,
+                 industry ,
+                 revenue ,
+                 min_salary ,
+                 max_salary 
+                 from eda_data
+                 where company_name in (select  company_name from a ) 
+                 and  job_title in (select  job_title from a )</p>
+                <p class="mt-5" style="font-family:serif"> <code>query : </code>with a as (
+                  select 
+                   avg(max_salary) ,
+                   company_name 
+                   from eda_data 
+                   group by 2 
+                   order by 1 desc limit 10 ) 
+                   
+                 
+                 select 
+                 company_name ,
+                 location ,
+                 headquarters ,
+                 size ,
+                 founded ,
+                 type_of_ownership ,
+                 industry ,
+                 revenue ,
+                 min_salary ,
+                 max_salary 
+                 from eda_data
+                 where company_name in (select  company_name from a )</p>
+                <p class="mt-5" style="font-family:serif"> <code>query : </code>with a as (select 
+                  distinct job_state as jj , 
+                  round(avg(min_salary)) as mins 
+                  from 
+                  eda_data 
+                  group by 1
+                  order by 2 asc limit 10 )
+                  select * from a 
+                  order by 2 asc</p>
+
+ <p class="mt-5" style="font-family:serif"><code>query : </code> select 
+  distinct job_state as jj , 
+  round(avg(max_salary)) as maxs 
+  from 
+  eda_data 
+  group by 1
+  order by 2 desc limit 10with a as (select 
+  distinct job_state as jj , 
+  round(avg(max_salary)) as maxs 
+  from 
+  eda_data 
+  group by 1
+  order by 2 desc limit 10 )
+  select * from a 
+  order by 2 asc</p>
+ <p class="mt-5" style="font-family:serif"><code>query : </code> select 
+  job_state , 
+  count(distinct company_name)as com_numm
+  from 
+  eda_data 
+  group by 1 order by 2 desc limit 10</p>
+ <p class="mt-5" style="font-family:serif"> <code>query : </code>with 
+  
+  b as (
+        SELECT 
+        case 
+        when founded between 1701 and 1800 then '18th'
+        when founded between 1801 and 1900 then '19th'
+        when founded between 1901 and 2000 then '20th'
+        when founded > 2001 then '21th'
+        end as decade ,
+        count(*) as com_jobs 
+        FROM eda_data
+        where founded > 0 
+        group by 1) ,
+  
+  
+  a as 
+        (SELECT 
+        case 
+        when founded between 1701 and 1800 then '18th'
+        when founded between 1801 and 1900 then '19th'
+        when founded between 1901 and 2000 then '20th'
+        when founded > 2001 then '21th'
+        end as decade ,
+        count(distinct company_name) as com_num ,
+        count(distinct job_state) as com_loc ,
+        count(distinct job_title) as com_job 
+  
+  
+        FROM eda_data
+        where founded > 0 
+        group by 1)
+  
+  select 
+  a.decade ,
+  com_num ,
+  com_loc ,
+  com_job ,
+  com_jobs ,
+  sum(com_num) over (order by a.decade) as cum_num  ,
+  sum(com_loc) over (order by a.decade) as cum_loc ,
+  sum(com_job) over (order by a.decade) as cum_job ,
+  sum(com_jobs) over (order by a.decade) as cum_jobs  
+  
+  from a inner join b on a.decade =b.decade</p>
+
             </div>
     </section>
 
